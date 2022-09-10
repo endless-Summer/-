@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+
+        <p v-text="name"></p>
+        <p v-text="gender">性别</p>
+
+        <hr>
+
+        <p>姓名：{{name}}</p>
+        <p>性别：{{gender}}</p>
+
+        <hr>
+
+        <div v-html="info"></div>
+        <div>{{info}}</div>
+        <div v-text="info"></div>
+
+    </div>
+    <script>
+        const vm = new Vue({
+            el: '#app',
+            data: {
+                name: 'lisi',
+                gender: '女',
+                info: '<h4 style="color:red;font-weight:bold;">欢迎学习vue！</h4>'
+            }
+        })
+    </script>
+</body>
+
+</html>

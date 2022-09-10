@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>简单计数器</title>
+    <style>
+        div {
+            height: 100px;
+            width: 200px;
+            border: 1px;
+            background-color: rgb(250, 250, 250);
+            text-align: center;
+            font-family: 15px '幼圆';
+
+        }
+
+        button {
+            background-color: rgba(207, 206, 206, 0.945);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <button v-on:click='sub'>-</button>
+        {{num}}
+        <button @click='add'>+</button>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
+    <script>
+        const app = new Vue({
+            el: '#app',
+            data: {
+                num: 1,
+            },
+            methods: {
+                add: function () {
+                    if (this.num < 10) {
+                        this.num++;
+                    } else {
+                        alert('已达最大值,不可再增加')
+                    }
+
+                },
+                sub: function () {
+                    if (this.num > 0) {
+                        this.num--;
+                    } else {
+                        alert('已达最小值,不可再减了')
+                    }
+
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

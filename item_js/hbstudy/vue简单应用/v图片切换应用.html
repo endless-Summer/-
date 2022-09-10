@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            align-items: center;
+
+            position: relative;
+        }
+
+        img {
+            width: 400px;
+            height: 600px;
+            position: absolute;
+            left: 400px;
+        }
+
+        .left {
+            margin-top: 300px;
+            margin-left: 402px;
+            float: left;
+            height: 30px;
+            position: absolute;
+            background-color: rgb(255, 255, 255);
+        }
+
+        .right {
+            margin-left: 780px;
+            margin-top: 300px;
+            height: 30px;
+            float: right;
+            position: absolute;
+            background-color: rgb(255, 255, 255);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="float">
+        <h2>
+
+            <img :src='IMGsrc[index]' alt="">
+        </h2>
+        <a class="left" v-show='index!=0' @click='pre'>⬅</a>
+
+        <a class="right" v-show='index<IMGsrc.length-1' @click='next'>➡</a>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
+
+    <script>
+
+        const float = new Vue({
+            el: '#float',
+            data: {
+                IMGsrc: [
+                    '/image/1.jpg',
+                    '/image/2.jpg',
+                    '/image/3.jpg',
+                    '/image/4.jpg',
+                    '/image/5.jpg',
+                    '/image/6.jpg',
+                    '/image/7.jpg',
+                    '/image/IU.jpg',
+                ],
+                index: 0
+            },
+            methods: {
+                pre: function () {
+                    if (this.index > 0) {
+                        this.index--;
+                    }
+                },
+                next: function () {
+                    if (this.index < this.IMGsrc.length - 1) {
+                        this.index++;
+                    } else {
+
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

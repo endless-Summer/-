@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>13_内置对象</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var str="study hard, life better";
+			console.log(str.charAt(0));//对应编号位置的字符,s
+			console.log(str.charAt(333)); //返回空白;
+			console.log(str.indexOf('e'));//这个字符串中字母从左到右第一个e对应的位置.
+			console.log(str.indexOf('q'));//-1 代表不存在.
+			console.log(str.substr(0,3)); //stu 从位置0开始,截取3位数 [0,1,2] 
+			console.log(str.substring(1,3));//tu  从位置1开始,截取到位置3,但是不包括位置3.[1,3)
+			console.log(str.toUpperCase());// 将str的内容全部大写.
+			console.log(str.length);//输出str字符串的长度
+		</script>
+	</body>
+</html>

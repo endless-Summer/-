@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div>
+			<span>点击点击</span>这是个div盒子
+		</div>
+		<div>
+			这是second div盒子
+		</div>
+		<input value="啥也不是" />
+		<p class="p"> 段落</p>
+		<span id="s">span</span>
+		<script src="js/jquery-3.3.1.min.js" type="text/javascript" charset="UTF-8"></script>
+		<script type="text/javascript">
+			console.log($("div"));//标签选择器
+			console.log($("div").text);//和innerhtml很相似
+			console.log($("div").html);
+
+			console.log(document.getElementsByTagName("div")[0]);
+			console.log($(".p"));//类选择器
+			console.log($("#s"));//元素选择器
+			console.log(	"****************");
+			var divs= $("div");
+			divs.each(function(){//each遍历所有的元素, index()是对象的索引,从0开始
+				console.log($(this).index()+'---'+$(this).text());
+			}
+			)
+			//通用选择器
+			$("*").each(function(){
+				console.log($(this).index()+'---'+$(this).text());
+			}
+			)
+			
+			//组合选择器
+			$("input,.p,#s").click(function(){
+				console.log($(this).html());
+			}
+			)
+			
+			//后代选择器
+			$("div span")
+		</script>
+	</body>
+</html>

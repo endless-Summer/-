@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .child :nth-child(1) {
+      color: red;
+    }
+
+    table td:first-of-type {
+      color: aqua;
+      font: bolder;
+    }
+   span[haha]{
+      color:yellow;
+      font-size: larger;
+    }
+    span[haha*='dou']{
+      color:aquamarine
+    }
+   span[haha^='sm']{
+      color:red
+    }
+    span[haha$='bu']{
+      color:rebeccapurple
+    }
+    .gg{
+      position: fixed;
+      right:20px;
+      height: 80px;
+      width: 50px;
+      top: 200px;
+    }
+    b{
+       position: sticky;
+      left:20px;
+      height: 80px;
+      width: 50px;
+      top: 20px;
+    }
+    .float{
+      float: right;
+    }
+    	#container{
+				border: 2px solid red;
+				margin: 30px auto;
+				width: 90%;
+			}
+	.float1{
+				height: 100px;
+				background: green;
+				width: 200px;
+				float: left;
+        
+			}
+      .clip{
+      position: absolute;
+      left: -99999px;
+      top: -99992px;
+      background-color: rgba(15, 66, 235, 0.534);
+      }
+  </style>
+</head>
+
+<body>
+  <div class="clip">I am clip </div>
+  	<div id="container">
+		<h1>包含框</h1>
+		<div class="float1"><h1>float left</h1></div>
+    <h2>后面呢</h2>
+	</div>
+  <!-- 行内标签：相邻的行内展示在一行 -->
+  <span> 我是span</span>
+  <a href="">wo是 a </a>
+ 
+  <em> ememem </em>
+  <label>label fhahah hahahah </label>
+  <table border="1">
+    <th>学习  </th>
+    <th rowspan="2"> 或者做梦</th>
+    <tr>
+      <td rowspan="2"> 姓名 </td>
+      <td>年龄</td>
+      <td>11 </td>
+      <td>2</td>
+      <td>3</td>
+    </tr>
+
+    <tr>
+      <td colspan="3">hehe</td>
+      <td rowspan="2"> hahahah</td>
+      <td>11 </td>
+      <td>2</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>
+        什么也不必是
+      </td>
+      <td> 确定的</td>
+      <td>真的么</td>
+    </tr>
+    <tr class="child">
+      <td>a </td>
+      <td>b</td>
+      <td>c</td>
+      <td>d</td>
+    </tr>
+
+  </table>
+  <br>
+
+  <div class="float">
+    <span haha="wosmdoubucuo" > 属性选择器</span>
+      <span haha="wosmbucuo" > 属性选择器</span>
+        <span haha="wodoubu" > 属性选择器</span>
+          <span haha="smdoubucuo" > 属性选择器</span>
+  </div>
+  <div class="float">  浮动 烦死了  </div>
+   <div class="float">  浮动 烦死了2  </div><div style="clear:both;">  </div>
+  <label for="">我是真不配</label>
+  <label for="">我无聊  </label>
+  <label for="">我轮回不止</label>
+  <label for="">可以了 </label>
+  <label for="">够了</label>
+ <b>粘性定位</b> 
+  
+  <div class="gg"> 我是一个小广告 </div>
+  <script>
+    function demo() {
+      var a = b = 3
+
+    }
+    console.log(typeof a !== undefined);
+    console.log(typeof b !== undefined);
+  </script>
+</body>
+
+</html>

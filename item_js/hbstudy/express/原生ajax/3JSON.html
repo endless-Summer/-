@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,  initial-scale=1.0">
+    <title>服务端响应JSON</title>
+    <style>
+        #result {
+            width: 200px;
+            height: 100px;
+            border: solid 1px aqua;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="result"></div>
+    <script>
+        const result = document.querySelector('#result')
+        //绑定键盘按下事件 
+        window.onkeydown = function () {
+            //  console.log('test') //测试一下
+            //发送请求
+            const xhr = new XMLHttpRequest();
+            //设置响应体数据的类型 (为了自动的数据转换而设置的)
+            xhr.responseType = 'json';
+            //初始化
+            xhr.open('GET', 'http://127.0.0.1:8000/json-server');
+            //发送
+            xhr.send();
+            //事件绑定
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4) {
+                    if (xhr.status >= 200 && xhr.status < 300) {
+                        // console.log(xhr.response);
+                        // result.innerHTML = xhr.response;
+                        //如果服务器传过来的数据(xhr.response)是字符串,那我们对其做一个转化
+                        //1.手动对数据转换
+                        // let data = JSON.parse(xhr.response)
+                        //  console.log(data);
+                        //  result.innerHTML = data.name
+                        console.log(xhr.response);
+                        //2.自动对数据转换
+                        result.innerHTML = xhr.response.name
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

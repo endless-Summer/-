@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>点击获取校花</title>
+</head>
+<div id="demo">
+    <input type="button" value="点击获取校花" @click='getjoke'>
+    <p>{{joke}}</p>
+</div>
+
+<body>
+    <script src="https://cdn.bootcdn.net/ajax/libs/axios/0.24.0/axios.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
+    <script>
+        var demo = new Vue({
+            el: '#demo',
+            data: {
+                joke: 'a joke, not a campus belle'
+            },
+            methods: {
+                getjoke: function () {
+                    var that = this
+                    console.log(this.joke)
+                    axios.get('https:autumnfish.cn/api/joke')
+                        .then(function (response) {
+                            console.log(response.data)
+                            that.joke = response.data
+
+                        }, function (err) {
+                            console.log(err)
+                        })
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

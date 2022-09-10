@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<button onclick="addImg()">添加图片</button>
+		<div id="d"></div>
+		<script type="text/javascript">
+			function addImg(){
+				//添加图片,img,src属性,width 和height
+				var img=document.createElement('img');
+				img.src="img/1.jpg";
+				img.height=400;
+				img.width=800;
+				var d =document.getElementById("d");
+				//第一种方式
+			//	d.appendChild(img);//添加子元素
+				//第二种方式 
+				/* img.setAttribute("src","img/1.jpg");
+				img.setAttribute("width","800px");
+				img.setAttribute("height","400px");
+				d.appendChild(img); */
+				//第三种方式
+				var str="<img src='img/1.jpg' width='800px' height='400px'>";
+				d.innerHTML =str;
+			}
+			
+			
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <link rel="stylesheet" href="./lib/bootstrap-4.3.1.css">
+
+</head>
+
+<body>
+    <div id="app" class="table table-bordered table-hover table-striped">
+        <form @submit.prevent="add" action="">
+            <div>
+                <span>英雄名称：</span>
+
+                <input v-model.trim="legend" type="text" placeholder="请输入英雄名称" id="">
+                <button type="submit">添加英雄</button>
+            </div>
+        </form>
+        <table>
+
+            <thead>
+                <th>索引</th>
+                <th>id</th>
+                <th>姓名</th>
+                <th>时间</th>
+                <th>操作</th>
+            </thead>
+            <tbody>
+                <tr v-for="(item,index) in list" :key="item.id">
+                    <td>{{index}}</td>
+                    <td>{{item.id}}</td>
+                    <td>{{item.name}}</td>
+
+                    <td>{{item.time}}</td>
+                    <td><a href="javascript:;" @click="remove(item.id)">删除</a></td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+
+
+
+    <script>
+        const vm = new Vue({
+            el: '#app',
+            data: {
+                //用户输入的英雄名
+                legend: '',
+                nextId: 4,
+                list: [
+                    { id: 1, name: '龙女', time: new Date() },
+                    { id: 2, name: '猪妹', time: new Date() },
+                    { id: 3, name: '艾克', time: new Date() }
+
+                ]
+            },
+            methods: {
+                //删除该行对应的内容
+                remove(id) {
+                    this.list = this.list.filter(item => item.id !== id)
+                },
+                //阻止表单的默认提交后，触发add方法
+                add() {
+                    //console.log(this.legend)
+                    //如果this.legend为空，则return出去 
+                    if (this.legend === '') {
+                        alert('英雄名不能为空')
+                    }
+                    const obj = {
+                        id: this.nextId,
+                        name: this.legend,
+                        time: new Date()
+                    }
+                    this.list.push(obj)
+                    this.nextId++
+                    this.legend = ''
+
+
+
+
+                }
+            }
+        }
+        )
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <p>用户的名字是： {{username}}</p>
+        <input type="text" v-model="username">
+        <hr>
+        <input type="text" :value="username">
+
+        <hr>
+        <select v-model="city">
+            <option value="">请选择城市</option>
+            <option value="1">北京 </option>
+            <option value="2">深圳</option>
+            <option value="3">上海</option>
+            <option value="4">南京</option>
+
+
+
+        </select>
+    </div>
+
+
+
+    <script>
+        const vm = new Vue({
+            el: '#app',
+            data: {
+                username: 'lihao',
+                city: ''
+            }
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>类型转换</title>
+		
+	</head>
+	<body>
+		<script type="text/javascript">
+			var s1= "123.13465";
+			var n1=parseFloat(s1);
+			console.log(s1);
+			console.log(n1);
+			console.log(typeof(s1));
+			console.log(typeof(n1));
+			console.log("*******分割线***********")
+			var s2="falj222";
+			var n2=parseInt(s2);  
+			console.log(s2); //结果是NAN, 代表not a number.
+			console.log(n2);
+			console.log(typeof(s2));
+			console.log(typeof(n2));
+			var aa="1";
+			var bb=1;
+			console.log(aa==bb); //==比较数值,结果是true; 因为js是弱类型语言
+			console.log(aa===bb); //===比较数值和类型,都true才是true;结果是false
+			
+			var ee=123;
+			var stri= ee.toString(); //数据类型转换
+			console.log(typeof(stri));
+		</script>
+		
+	</body>
+</html>

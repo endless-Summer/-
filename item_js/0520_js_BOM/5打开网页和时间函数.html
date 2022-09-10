@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="button" onclick="openBaidu()" value="打开" />
+		<h1 id="h1"></h1>
+		<button onclick="controlTime()">停止/开始</button>
+		<script type="text/javascript">
+			function openBaidu() {
+		
+				window.open("https://www.baidu.com","_blank");
+			}
+			/* 定时器
+			setTimeout,指定多少时间后执行一次 
+			*/
+			/* 		setTimeout(function(){
+						window.open("https://www.baidu.com","_blank");
+					}5000); */
+			/* 在网页上动态的打印当前的时间,一秒钟变化一次
+			 当秒数为0的时候,字体变为红色
+			 添加停止技术的按钮,停止计时
+			 */
+			//获取当前的时间  做一个函数
+			function showTime() {
+				var date = new Date();
+				var time = date.toLocaleString();
+				var h1 = document.getElementById("h1");
+				h1.innerHTML = time; //在网页上显示内容
+				var sec = date.getSeconds();
+				sec %= 10;
+				if (0 == sec) {
+					h1.innerHTML = "<span style='color:red'>" + time + "</span>";
+				}
+			}
+			//定时器,返回一个值,可通过返回的内容进行取消定时器.
+			var resu = setInterval(showTime, 1000);
+			var stopFlag = 0;
+
+			function controlTime() {
+				if (stopFlag % 2 == 1) {
+					setInterval(showTime, 1000);
+					stopFlag = 0
+					
+				} else {
+					clearInterval(resu);
+					stopFlag = 1
+				}
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<form action="" method="post" id="form"> <!-- 空白 -->
+	 <!-- 空白的内容也会被当做子节点 -->		
+		<!-- 空白 -->	<input type="text" value="1"/>
+		<!-- 空白 -->	<input type="password" value="2"/>
+		<!-- 空白 -->	<input type="text" value="3"/>
+		<!-- 空白 -->	<input type="text" value="4"/>
+		<!-- 空白 -->	<input type="submit" />
+		</form>
+		<script type="text/javascript">
+			var f =document.getElementById("form");
+			//console.log(f.childNodes);//空白的内容也会被当做子节点,所以会有11个nodelist
+			//节点的类型 1表示元素节点 2表示属性节点 3表示文本节点
+			var list=f.childNodes;
+			for (var i=0;i<list.length;i++){
+				console.log(list[i].nodeType);
+			}
+			console.log("第一个子节点:"+list.firstChild);
+			console.log(inp.parentNode);//父节点
+			 
+		</script>
+	</body>
+</html>

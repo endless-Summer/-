@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+		div{
+			 background-color: aqua;
+			 width: 300px;
+			 height: 150px;
+			 top:500px;
+		 }
+		
+		 </style>
+	</head>
+	<body>
+		
+	 用户名:	<input type="text" name="" id="in" value=""/>
+	 <span id="s"></span>
+	</br> <input type="text" id="in2"/> 
+	<span id="s1"></span>
+	 <div id="d" " onmouseover="movefunc();"onmouseout="outfunc();"></div>
+	 <span id="s2"></span>
+		
+	 <script type="text/javascript">
+		
+		 var inp=document.getElementById("in");
+		 var sp=document.getElementById("s");
+		 
+		 var inp2=document.getElementById("in2");
+		  //获取到焦点发生的事件
+			inp.onfocus = function(){
+			 s.style.color='red';
+			 s.innerHTML="请输入用户名,不能以数字开头";
+		 }
+		 //元素失去焦点后触发的事件, on是绑定的意思
+			inp.onblur= function(){
+			 //在后台查询后,确定用户名的可用性;
+			 s.innerHTML= "此用户名不可用/已经被占用";33
+		 }	
+			inp2.onchange= function(){
+			 s1.innerHTML="内容已经被更改";
+		 }
+			function movefunc(){
+				document.getElementById("d").innerHTML="鼠标移动到div上了";
+			}
+			function outfunc(){
+				document.getElementById("d").innerHTML="鼠标从div上移开了";
+			}
+		 
+	 </script>
+	</body>
+</html>

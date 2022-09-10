@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			function sum(a,b){
+				console.log(a+b);
+			}
+			function sum(a,b,c){
+			console.log(a+b+c);
+			}
+			sum(1,3);//结果是NaN
+			sum(2,3,4);//结果是9
+			//函数名如果重复了,后面的覆盖前面的,即funct sum(a,b)已经不存在了.
+			//如果sum(a,b,c)不存在了,那么sum(2,3,4)的结果是5    按照sum(a,b)计算.
+			
+			//函数的返回值,
+			function sub(a,b){
+				return a-b;
+			}
+			console.log(sub(5,3))
+		</script>
+	</body>
+</html>

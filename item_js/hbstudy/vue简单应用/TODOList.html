@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TODOlist</title>
+    <style>
+        #todolist {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin-top: 20px;
+            margin-left: 40%;
+            width: 300px;
+            position: relative;
+        }
+
+        input {
+            width: auto;
+            height: 30px;
+        }
+
+        p {
+            position: relative;
+            height: 20px;
+            margin: 0;
+            padding: 5px;
+        }
+
+        button {
+            display: none;
+            right: 0px;
+            position: absolute;
+
+        }
+
+        li:hover button {
+            display: block;
+        }
+
+        li button:after {
+            content: '✖'
+        }
+
+        ul li {
+            list-style-type: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="todolist">
+        <h1>TODOlist</h1>
+        <input type="text" v-model='message' @keyup.enter='addEvent'>
+        <div id="content">
+            <ul>
+                <li v-for='(item,index) in goal'>
+                    <div>
+                        <strong>{{ index+1}}</strong>
+                        <label for="">{{item.act}} </label>
+                        <button></button>
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
+    <script>
+        var todolist = new Vue({
+            el: '#todolist',
+            data: {
+                goal: [
+                    { act: '学习' },
+                    { act: '吃饭' },
+                    { act: '睡觉' },
+                    { act: '听歌' },
+                ],
+                message: '顿悟',
+                mouseState: false
+            },
+            methods: {
+                addEvent: function () {
+                    this.goal.push({ act: this.message });
+                    console.log(this.message)
+                },
+
+            }
+        })
+    </script>
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>

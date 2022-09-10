@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<!-- <script type="text/javascript">
+			var d=document.getElementById("d");
+			d.innerHTML="这是一个div";
+		</script>  div还未加载,这种写在head中的写法会报错-->
+		<script type="text/javascript">
+			window.onload = function onload(){
+			//等网页加载后在运行,这个函数就可以让<script>标签放在head中
+			
+			var d=document.getElementById("d");
+			d.innerHTML="这是一个div";  // 
+			}
+		</script> 
+	</head>
+	<body>
+		<div id="d"></div>
+	</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>v-for</title>
+</head>
+
+<body>
+    <div id="app">
+        <input @click='add' value="增加数据" type="button">
+        <input @click='remove' value="移除数据" type="button">
+        <ul>
+            <li v-for='(item,index) in arr'>
+                {{index+1}} 中国的城市:{{item}}
+            </li>
+            <li v-for='item in vegetable' :title='item.name'>
+                好吃的:{{item.name}}
+            </li>
+        </ul>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
+    <script>
+        const app = new Vue({
+            el: '#app',
+            data: {
+                arr: ['北京', '南京', '上海', '武汉', '芜湖'],
+                vegetable: [
+                    { name: '果冻' },
+                    { name: '火龙果' },
+                    { name: '桃子' }],
+                key: [2, 3, 4, 5, 6]
+            },
+            methods: {
+                add: function () {
+                    this.vegetable.push({ name: '瓜子' })
+                },
+                remove: function () {
+                    this.vegetable.shift()
+                }
+
+            },
+        }
+        )
+    </script>
+</body>
+
+</html>

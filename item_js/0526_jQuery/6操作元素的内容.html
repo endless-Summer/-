@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	<div id="d1">端午</div>
+	<div id="d2">永远年轻</div>
+	<input type="text" value="123" />
+	<button id="btn1">修改内容</button>
+	<script src="js/jquery-3.3.1.min.js" type="text/javascript" charset="UTF-8"></script>
+	<script type="text/javascript">
+	$("#btn1").click(function(){
+	console.log($("#d1").html());
+	console.log($("#d1").text());
+	$("#d1").html("<b>放假</b>");
+	console.log($("input").val)
+	$("input").val("456");
+	})
+	</script>
+	</body>
+<html>

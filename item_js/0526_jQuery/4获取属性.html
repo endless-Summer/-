@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+<form action="" id="mtform">
+<input type="checkbox" name="ch" checked="checked" />aa
+<input type="checkbox" name="ch" />bb
+</form>
+<button id="btn">点击</button>
+<button id="btn1">点击修改属性</button>
+<button id="btn2">点击移除属性</button>
+<script src="js/jquery-3.3.1.min.js" type="text/javascript" charset="UTF-8"></script>
+	<script type="text/javascript">
+	
+	function getAttr(){//封装
+	//获取元素
+	var inps =$("input");
+	inps.each(function(idx,e){
+	/*console.log(idx+"--"+$(e).attr("type"));*///.attr是jQuery的 e是jQuery对象
+	console.log(idx+"--"+$(e).attr("checked"));//就找不到第二个input  获取到的是属性具体的值
+	console.log(idx+"--"+$(e).prop("checked"));//获取属性状态 （真/假）
+	})
+	}
+	$("#btn").click(getAttr);
+	//attr 一个参数叫获取 两个参数叫修改
+	$("#btn1").click(function(){
+	$("input").attr("name","cha");
+	})
+	$("#btn2").click(function(){
+	$("input").removeAttr("name","cha");
+	})
+	</script>
+	</body>
+</html>
